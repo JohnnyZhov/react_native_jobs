@@ -17,13 +17,13 @@ const Home = () => {
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
         options={{
-          headerStyle: { background: COLORS.lightWhite },
+          headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
           headerLeft: () => (
-            <ScreenHeaderBtn iconUrl={icons.menu} dimention="60%" />
+            <ScreenHeaderBtn iconUrl={icons.menu} dimension={24} />
           ),
           headerRight: () => (
-            <ScreenHeaderBtn iconUrl={images.profile} dimention="100%" />
+            <ScreenHeaderBtn iconUrl={images.profile} dimension={40} />
           ),
           headerTitle: ""
         }}
