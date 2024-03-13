@@ -19,15 +19,18 @@ import {
 } from "../../components";
 import { COLORS, icons, SIZES } from "../../constants";
 import useFetch from "../../hook/useFetch";
+import { useRoute } from '@react-navigation/native';
 
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
 const JobDetails = () => {
   const router = useRouter();
-  const params = router.activeRoute ? router.activeRoute.params : {};
+  const route = useRoute();
+  
+  const { id } = route.params;
 
   const { data, isLoading, error, refetch } = useFetch("job-details", {
-    job_id: params.id,
+    job_id: id,
   });
 
   const [activeTab, setActiveTab] = useState(tabs[0]);
